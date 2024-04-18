@@ -22,8 +22,6 @@ class _WeatherMainScreenState extends State<WeatherMainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final model = context.watch<WeatherMainViewModel>();
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Weather'),
@@ -37,8 +35,10 @@ class _WeatherMainScreenState extends State<WeatherMainScreen> {
                   value: WeatherRadioEnum.forecastCurrent,
                   groupValue: _weatherRadioEnum,
                   onChanged: (WeatherRadioEnum? value) {
-                    _weatherRadioEnum = value;
-                    model.getWeatherModel(false);
+                    setState(() {
+                      _weatherRadioEnum = value;
+                    });
+                    context.read<WeatherMainViewModel>().getWeatherModel(false);
                   },
                 ),
               ),
@@ -48,8 +48,10 @@ class _WeatherMainScreenState extends State<WeatherMainScreen> {
                   value: WeatherRadioEnum.last10days,
                   groupValue: _weatherRadioEnum,
                   onChanged: (WeatherRadioEnum? value) {
-                    _weatherRadioEnum = value;
-                    model.getWeatherModel(true);
+                    setState(() {
+                      _weatherRadioEnum = value;
+                    });
+                    context.read<WeatherMainViewModel>().getWeatherModel(true);
                   },
                 ),
               ),
@@ -60,11 +62,17 @@ class _WeatherMainScreenState extends State<WeatherMainScreen> {
       body: Container(
         color: Colors.lightBlueAccent.withOpacity(0.6),
         child: Builder(builder: (context) {
-          if (model.weatherModel == null) {
+          if (context.watch<WeatherMainViewModel>().weatherModel == null) {
             return Center(child: CircularProgressIndicator());
           } else {
             return ListView.builder(
-                itemCount: (model.weatherModel?.dailyModel.time.length ?? 0),
+                itemCount: (context
+                        .watch<WeatherMainViewModel>()
+                        .weatherModel
+                        ?.dailyModel
+                        .time
+                        .length ??
+                    0),
                 itemBuilder: (context, index) {
                   return Container(
                     padding: EdgeInsets.all(16.0),
@@ -75,12 +83,13 @@ class _WeatherMainScreenState extends State<WeatherMainScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text('${model.weatherModel?.dailyModel.time[index]}'),
+                        Text(
+                            '${context.watch<WeatherMainViewModel>().weatherModel?.dailyModel.time[index]}'),
                         Row(
                           children: [
                             Icon(Icons.water_drop),
                             Text(
-                                '${model.weatherModel?.dailyModel.precipitationProbabilityMax[index]}'),
+                                '${context.watch<WeatherMainViewModel>().weatherModel?.dailyModel.precipitationProbabilityMax[index]}'),
                           ],
                         ),
                         // 날씨 코드에 따른 이미지
@@ -89,9 +98,9 @@ class _WeatherMainScreenState extends State<WeatherMainScreen> {
                           width: 24.0,
                         ),
                         Text(
-                            '${model.weatherModel?.dailyModel.temperature2mMin[index]}'),
+                            '${context.watch<WeatherMainViewModel>().weatherModel?.dailyModel.temperature2mMin[index]}'),
                         Text(
-                            '${model.weatherModel?.dailyModel.temperature2mMax[index]}'),
+                            '${context.watch<WeatherMainViewModel>().weatherModel?.dailyModel.temperature2mMax[index]}'),
                       ],
                     ),
                   );
