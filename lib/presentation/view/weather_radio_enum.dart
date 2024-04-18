@@ -1,0 +1,1 @@
+enum WeatherRadioEnum {forecastCurrent, last10days}

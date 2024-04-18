@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_weather/presentation/view/weather_radio_enum.dart';
 
 class WeatherMainScreen extends StatefulWidget {
   const WeatherMainScreen({super.key});
@@ -9,11 +10,44 @@ class WeatherMainScreen extends StatefulWidget {
 }
 
 class _WeatherMainScreenState extends State<WeatherMainScreen> {
+  WeatherRadioEnum? _weatherRadioEnum = WeatherRadioEnum.forecastCurrent;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Weather'),
+        title: const Text('Weather'),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(90.0),
+          child: Column(
+            children: <Widget>[
+              ListTile(
+                title: const Text('Forecast & Current'),
+                leading: Radio(
+                  value: WeatherRadioEnum.forecastCurrent,
+                  groupValue: _weatherRadioEnum,
+                  onChanged: (WeatherRadioEnum? value) {
+                    setState(() {
+                      _weatherRadioEnum = value;
+                    });
+                  },
+                ),
+              ),
+              ListTile(
+                title: const Text('Last 10 days'),
+                leading: Radio(
+                  value: WeatherRadioEnum.last10days,
+                  groupValue: _weatherRadioEnum,
+                  onChanged: (WeatherRadioEnum? value) {
+                    setState(() {
+                      _weatherRadioEnum = value;
+                    });
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
       body: Container(
         color: Colors.lightBlueAccent.withOpacity(0.6),
@@ -36,7 +70,10 @@ class _WeatherMainScreenState extends State<WeatherMainScreen> {
                     ],
                   ),
                   // 날씨 코드에 따른 이미지
-                  Image.asset('assets/png/sun.png', width: 24.0,),
+                  Image.asset(
+                    'assets/png/sun.png',
+                    width: 24.0,
+                  ),
                   Text('최저온도'),
                   Text('최고온도'),
                 ],
