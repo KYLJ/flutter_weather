@@ -20,10 +20,10 @@ class WeatherDto {
     timezone = json['timezone'];
     timezoneAbbreviation = json['timezone_abbreviation'];
     elevation = json['elevation'];
-    currentUnits = json['current_units'] != null ? CurrentUnits.fromJson(json['current_units']) : null;
-    current = json['current'] != null ? Current.fromJson(json['current']) : null;
-    dailyUnits = json['daily_units'] != null ? DailyUnits.fromJson(json['daily_units']) : null;
-    daily = json['daily'] != null ? Daily.fromJson(json['daily']) : null;
+    currentUnits = json['current_units'] != null ? CurrentUnitDto.fromJson(json['current_units']) : null;
+    current = json['current'] != null ? CurrentDto.fromJson(json['current']) : null;
+    dailyUnits = json['daily_units'] != null ? DailyUnitDto.fromJson(json['daily_units']) : null;
+    daily = json['daily'] != null ? DailyDto.fromJson(json['daily']) : null;
   }
   num? latitude;
   num? longitude;
@@ -32,10 +32,10 @@ class WeatherDto {
   String? timezone;
   String? timezoneAbbreviation;
   num? elevation;
-  CurrentUnits? currentUnits;
-  Current? current;
-  DailyUnits? dailyUnits;
-  Daily? daily;
+  CurrentUnitDto? currentUnits;
+  CurrentDto? current;
+  DailyUnitDto? dailyUnits;
+  DailyDto? daily;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -63,15 +63,15 @@ class WeatherDto {
 
 }
 
-class Daily {
-  Daily({
+class DailyDto {
+  DailyDto({
       this.time, 
       this.weatherCode, 
       this.temperature2mMax, 
       this.temperature2mMin, 
       this.precipitationProbabilityMax,});
 
-  Daily.fromJson(dynamic json) {
+  DailyDto.fromJson(dynamic json) {
     time = json['time'] != null ? json['time'].cast<String>() : [];
     weatherCode = json['weather_code'] != null ? json['weather_code'].cast<num>() : [];
     temperature2mMax = json['temperature_2m_max'] != null ? json['temperature_2m_max'].cast<num>() : [];
@@ -96,15 +96,15 @@ class Daily {
 
 }
 
-class DailyUnits {
-  DailyUnits({
+class DailyUnitDto {
+  DailyUnitDto({
       this.time, 
       this.weatherCode, 
       this.temperature2mMax, 
       this.temperature2mMin, 
       this.precipitationProbabilityMax,});
 
-  DailyUnits.fromJson(dynamic json) {
+  DailyUnitDto.fromJson(dynamic json) {
     time = json['time'];
     weatherCode = json['weather_code'];
     temperature2mMax = json['temperature_2m_max'];
@@ -129,15 +129,15 @@ class DailyUnits {
 
 }
 
-class Current {
-  Current({
+class CurrentDto {
+  CurrentDto({
       this.time, 
       this.interval, 
       this.temperature2m, 
       this.precipitation, 
       this.weatherCode,});
 
-  Current.fromJson(dynamic json) {
+  CurrentDto.fromJson(dynamic json) {
     time = json['time'];
     interval = json['interval'];
     temperature2m = json['temperature_2m'];
@@ -162,15 +162,15 @@ class Current {
 
 }
 
-class CurrentUnits {
-  CurrentUnits({
+class CurrentUnitDto {
+  CurrentUnitDto({
       this.time, 
       this.interval, 
       this.temperature2m, 
       this.precipitation, 
       this.weatherCode,});
 
-  CurrentUnits.fromJson(dynamic json) {
+  CurrentUnitDto.fromJson(dynamic json) {
     time = json['time'];
     interval = json['interval'];
     temperature2m = json['temperature_2m'];
