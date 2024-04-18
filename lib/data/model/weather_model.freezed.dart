@@ -27,10 +27,10 @@ mixin _$WeatherModel {
   String get timezone => throw _privateConstructorUsedError;
   String get timezoneAbbreviation => throw _privateConstructorUsedError;
   num get elevation => throw _privateConstructorUsedError;
-  CurrentUnitModel get currentUnits => throw _privateConstructorUsedError;
-  CurrentModel get current => throw _privateConstructorUsedError;
-  DailyUnitModel get dailyUnits => throw _privateConstructorUsedError;
-  DailyModel get daily => throw _privateConstructorUsedError;
+  CurrentUnitModel get currentUnitModel => throw _privateConstructorUsedError;
+  CurrentModel get currentModel => throw _privateConstructorUsedError;
+  DailyUnitModel get dailyUnitModel => throw _privateConstructorUsedError;
+  DailyModel get dailyModel => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,15 +52,15 @@ abstract class $WeatherModelCopyWith<$Res> {
       String timezone,
       String timezoneAbbreviation,
       num elevation,
-      CurrentUnitModel currentUnits,
-      CurrentModel current,
-      DailyUnitModel dailyUnits,
-      DailyModel daily});
+      CurrentUnitModel currentUnitModel,
+      CurrentModel currentModel,
+      DailyUnitModel dailyUnitModel,
+      DailyModel dailyModel});
 
-  $CurrentUnitModelCopyWith<$Res> get currentUnits;
-  $CurrentModelCopyWith<$Res> get current;
-  $DailyUnitModelCopyWith<$Res> get dailyUnits;
-  $DailyModelCopyWith<$Res> get daily;
+  $CurrentUnitModelCopyWith<$Res> get currentUnitModel;
+  $CurrentModelCopyWith<$Res> get currentModel;
+  $DailyUnitModelCopyWith<$Res> get dailyUnitModel;
+  $DailyModelCopyWith<$Res> get dailyModel;
 }
 
 /// @nodoc
@@ -83,10 +83,10 @@ class _$WeatherModelCopyWithImpl<$Res, $Val extends WeatherModel>
     Object? timezone = null,
     Object? timezoneAbbreviation = null,
     Object? elevation = null,
-    Object? currentUnits = null,
-    Object? current = null,
-    Object? dailyUnits = null,
-    Object? daily = null,
+    Object? currentUnitModel = null,
+    Object? currentModel = null,
+    Object? dailyUnitModel = null,
+    Object? dailyModel = null,
   }) {
     return _then(_value.copyWith(
       latitude: null == latitude
@@ -117,54 +117,54 @@ class _$WeatherModelCopyWithImpl<$Res, $Val extends WeatherModel>
           ? _value.elevation
           : elevation // ignore: cast_nullable_to_non_nullable
               as num,
-      currentUnits: null == currentUnits
-          ? _value.currentUnits
-          : currentUnits // ignore: cast_nullable_to_non_nullable
+      currentUnitModel: null == currentUnitModel
+          ? _value.currentUnitModel
+          : currentUnitModel // ignore: cast_nullable_to_non_nullable
               as CurrentUnitModel,
-      current: null == current
-          ? _value.current
-          : current // ignore: cast_nullable_to_non_nullable
+      currentModel: null == currentModel
+          ? _value.currentModel
+          : currentModel // ignore: cast_nullable_to_non_nullable
               as CurrentModel,
-      dailyUnits: null == dailyUnits
-          ? _value.dailyUnits
-          : dailyUnits // ignore: cast_nullable_to_non_nullable
+      dailyUnitModel: null == dailyUnitModel
+          ? _value.dailyUnitModel
+          : dailyUnitModel // ignore: cast_nullable_to_non_nullable
               as DailyUnitModel,
-      daily: null == daily
-          ? _value.daily
-          : daily // ignore: cast_nullable_to_non_nullable
+      dailyModel: null == dailyModel
+          ? _value.dailyModel
+          : dailyModel // ignore: cast_nullable_to_non_nullable
               as DailyModel,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CurrentUnitModelCopyWith<$Res> get currentUnits {
-    return $CurrentUnitModelCopyWith<$Res>(_value.currentUnits, (value) {
-      return _then(_value.copyWith(currentUnits: value) as $Val);
+  $CurrentUnitModelCopyWith<$Res> get currentUnitModel {
+    return $CurrentUnitModelCopyWith<$Res>(_value.currentUnitModel, (value) {
+      return _then(_value.copyWith(currentUnitModel: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CurrentModelCopyWith<$Res> get current {
-    return $CurrentModelCopyWith<$Res>(_value.current, (value) {
-      return _then(_value.copyWith(current: value) as $Val);
+  $CurrentModelCopyWith<$Res> get currentModel {
+    return $CurrentModelCopyWith<$Res>(_value.currentModel, (value) {
+      return _then(_value.copyWith(currentModel: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $DailyUnitModelCopyWith<$Res> get dailyUnits {
-    return $DailyUnitModelCopyWith<$Res>(_value.dailyUnits, (value) {
-      return _then(_value.copyWith(dailyUnits: value) as $Val);
+  $DailyUnitModelCopyWith<$Res> get dailyUnitModel {
+    return $DailyUnitModelCopyWith<$Res>(_value.dailyUnitModel, (value) {
+      return _then(_value.copyWith(dailyUnitModel: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $DailyModelCopyWith<$Res> get daily {
-    return $DailyModelCopyWith<$Res>(_value.daily, (value) {
-      return _then(_value.copyWith(daily: value) as $Val);
+  $DailyModelCopyWith<$Res> get dailyModel {
+    return $DailyModelCopyWith<$Res>(_value.dailyModel, (value) {
+      return _then(_value.copyWith(dailyModel: value) as $Val);
     });
   }
 }
@@ -185,19 +185,19 @@ abstract class _$$WeatherModelImplCopyWith<$Res>
       String timezone,
       String timezoneAbbreviation,
       num elevation,
-      CurrentUnitModel currentUnits,
-      CurrentModel current,
-      DailyUnitModel dailyUnits,
-      DailyModel daily});
+      CurrentUnitModel currentUnitModel,
+      CurrentModel currentModel,
+      DailyUnitModel dailyUnitModel,
+      DailyModel dailyModel});
 
   @override
-  $CurrentUnitModelCopyWith<$Res> get currentUnits;
+  $CurrentUnitModelCopyWith<$Res> get currentUnitModel;
   @override
-  $CurrentModelCopyWith<$Res> get current;
+  $CurrentModelCopyWith<$Res> get currentModel;
   @override
-  $DailyUnitModelCopyWith<$Res> get dailyUnits;
+  $DailyUnitModelCopyWith<$Res> get dailyUnitModel;
   @override
-  $DailyModelCopyWith<$Res> get daily;
+  $DailyModelCopyWith<$Res> get dailyModel;
 }
 
 /// @nodoc
@@ -218,10 +218,10 @@ class __$$WeatherModelImplCopyWithImpl<$Res>
     Object? timezone = null,
     Object? timezoneAbbreviation = null,
     Object? elevation = null,
-    Object? currentUnits = null,
-    Object? current = null,
-    Object? dailyUnits = null,
-    Object? daily = null,
+    Object? currentUnitModel = null,
+    Object? currentModel = null,
+    Object? dailyUnitModel = null,
+    Object? dailyModel = null,
   }) {
     return _then(_$WeatherModelImpl(
       latitude: null == latitude
@@ -252,21 +252,21 @@ class __$$WeatherModelImplCopyWithImpl<$Res>
           ? _value.elevation
           : elevation // ignore: cast_nullable_to_non_nullable
               as num,
-      currentUnits: null == currentUnits
-          ? _value.currentUnits
-          : currentUnits // ignore: cast_nullable_to_non_nullable
+      currentUnitModel: null == currentUnitModel
+          ? _value.currentUnitModel
+          : currentUnitModel // ignore: cast_nullable_to_non_nullable
               as CurrentUnitModel,
-      current: null == current
-          ? _value.current
-          : current // ignore: cast_nullable_to_non_nullable
+      currentModel: null == currentModel
+          ? _value.currentModel
+          : currentModel // ignore: cast_nullable_to_non_nullable
               as CurrentModel,
-      dailyUnits: null == dailyUnits
-          ? _value.dailyUnits
-          : dailyUnits // ignore: cast_nullable_to_non_nullable
+      dailyUnitModel: null == dailyUnitModel
+          ? _value.dailyUnitModel
+          : dailyUnitModel // ignore: cast_nullable_to_non_nullable
               as DailyUnitModel,
-      daily: null == daily
-          ? _value.daily
-          : daily // ignore: cast_nullable_to_non_nullable
+      dailyModel: null == dailyModel
+          ? _value.dailyModel
+          : dailyModel // ignore: cast_nullable_to_non_nullable
               as DailyModel,
     ));
   }
@@ -283,10 +283,10 @@ class _$WeatherModelImpl implements _WeatherModel {
       required this.timezone,
       required this.timezoneAbbreviation,
       required this.elevation,
-      required this.currentUnits,
-      required this.current,
-      required this.dailyUnits,
-      required this.daily});
+      required this.currentUnitModel,
+      required this.currentModel,
+      required this.dailyUnitModel,
+      required this.dailyModel});
 
   factory _$WeatherModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$WeatherModelImplFromJson(json);
@@ -306,17 +306,17 @@ class _$WeatherModelImpl implements _WeatherModel {
   @override
   final num elevation;
   @override
-  final CurrentUnitModel currentUnits;
+  final CurrentUnitModel currentUnitModel;
   @override
-  final CurrentModel current;
+  final CurrentModel currentModel;
   @override
-  final DailyUnitModel dailyUnits;
+  final DailyUnitModel dailyUnitModel;
   @override
-  final DailyModel daily;
+  final DailyModel dailyModel;
 
   @override
   String toString() {
-    return 'WeatherModel(latitude: $latitude, longitude: $longitude, generationtimeMs: $generationtimeMs, utcOffsetSeconds: $utcOffsetSeconds, timezone: $timezone, timezoneAbbreviation: $timezoneAbbreviation, elevation: $elevation, currentUnits: $currentUnits, current: $current, dailyUnits: $dailyUnits, daily: $daily)';
+    return 'WeatherModel(latitude: $latitude, longitude: $longitude, generationtimeMs: $generationtimeMs, utcOffsetSeconds: $utcOffsetSeconds, timezone: $timezone, timezoneAbbreviation: $timezoneAbbreviation, elevation: $elevation, currentUnitModel: $currentUnitModel, currentModel: $currentModel, dailyUnitModel: $dailyUnitModel, dailyModel: $dailyModel)';
   }
 
   @override
@@ -338,12 +338,14 @@ class _$WeatherModelImpl implements _WeatherModel {
                 other.timezoneAbbreviation == timezoneAbbreviation) &&
             (identical(other.elevation, elevation) ||
                 other.elevation == elevation) &&
-            (identical(other.currentUnits, currentUnits) ||
-                other.currentUnits == currentUnits) &&
-            (identical(other.current, current) || other.current == current) &&
-            (identical(other.dailyUnits, dailyUnits) ||
-                other.dailyUnits == dailyUnits) &&
-            (identical(other.daily, daily) || other.daily == daily));
+            (identical(other.currentUnitModel, currentUnitModel) ||
+                other.currentUnitModel == currentUnitModel) &&
+            (identical(other.currentModel, currentModel) ||
+                other.currentModel == currentModel) &&
+            (identical(other.dailyUnitModel, dailyUnitModel) ||
+                other.dailyUnitModel == dailyUnitModel) &&
+            (identical(other.dailyModel, dailyModel) ||
+                other.dailyModel == dailyModel));
   }
 
   @JsonKey(ignore: true)
@@ -357,10 +359,10 @@ class _$WeatherModelImpl implements _WeatherModel {
       timezone,
       timezoneAbbreviation,
       elevation,
-      currentUnits,
-      current,
-      dailyUnits,
-      daily);
+      currentUnitModel,
+      currentModel,
+      dailyUnitModel,
+      dailyModel);
 
   @JsonKey(ignore: true)
   @override
@@ -385,10 +387,10 @@ abstract class _WeatherModel implements WeatherModel {
       required final String timezone,
       required final String timezoneAbbreviation,
       required final num elevation,
-      required final CurrentUnitModel currentUnits,
-      required final CurrentModel current,
-      required final DailyUnitModel dailyUnits,
-      required final DailyModel daily}) = _$WeatherModelImpl;
+      required final CurrentUnitModel currentUnitModel,
+      required final CurrentModel currentModel,
+      required final DailyUnitModel dailyUnitModel,
+      required final DailyModel dailyModel}) = _$WeatherModelImpl;
 
   factory _WeatherModel.fromJson(Map<String, dynamic> json) =
       _$WeatherModelImpl.fromJson;
@@ -408,13 +410,13 @@ abstract class _WeatherModel implements WeatherModel {
   @override
   num get elevation;
   @override
-  CurrentUnitModel get currentUnits;
+  CurrentUnitModel get currentUnitModel;
   @override
-  CurrentModel get current;
+  CurrentModel get currentModel;
   @override
-  DailyUnitModel get dailyUnits;
+  DailyUnitModel get dailyUnitModel;
   @override
-  DailyModel get daily;
+  DailyModel get dailyModel;
   @override
   @JsonKey(ignore: true)
   _$$WeatherModelImplCopyWith<_$WeatherModelImpl> get copyWith =>
