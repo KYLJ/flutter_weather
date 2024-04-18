@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_weather/data/data_source/data_source_impl.dart';
+import 'package:flutter_weather/data/repository/repository_impl.dart';
+import 'package:flutter_weather/domain/use_case/weather_use_case.dart';
+import 'package:flutter_weather/presentation/view/weather_main_view_model.dart';
+import 'package:provider/provider.dart';
 
 import 'presentation/view/weather_main_screen.dart';
 
@@ -17,7 +22,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: WeatherMainScreen(),
+      home: ChangeNotifierProvider(
+        create: (_) => WeatherMainViewModel(
+            getWeatherUseCase: GetWeatherUseCase(
+                repository: RepositoryImpl(DataSourceImpl()))),
+        child: WeatherMainScreen(),
+      ),
     );
   }
 }
