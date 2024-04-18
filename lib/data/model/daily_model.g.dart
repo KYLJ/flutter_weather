@@ -8,12 +8,19 @@ part of 'daily_model.dart';
 
 _$DailyModelImpl _$$DailyModelImplFromJson(Map<String, dynamic> json) =>
     _$DailyModelImpl(
-      time: json['time'] as String,
-      weatherCode: json['weatherCode'] as String,
-      temperature2mMax: json['temperature2mMax'] as String,
-      temperature2mMin: json['temperature2mMin'] as String,
+      time: (json['time'] as List<dynamic>).map((e) => e as String).toList(),
+      weatherCode:
+          (json['weatherCode'] as List<dynamic>).map((e) => e as num).toList(),
+      temperature2mMax: (json['temperature2mMax'] as List<dynamic>)
+          .map((e) => e as num)
+          .toList(),
+      temperature2mMin: (json['temperature2mMin'] as List<dynamic>)
+          .map((e) => e as num)
+          .toList(),
       precipitationProbabilityMax:
-          json['precipitationProbabilityMax'] as String,
+          (json['precipitationProbabilityMax'] as List<dynamic>)
+              .map((e) => e as num)
+              .toList(),
     );
 
 Map<String, dynamic> _$$DailyModelImplToJson(_$DailyModelImpl instance) =>
