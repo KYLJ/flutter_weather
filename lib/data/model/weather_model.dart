@@ -6,7 +6,6 @@ import 'daily_model.dart';
 import 'daily_unit_model.dart';
 
 part 'weather_model.freezed.dart';
-
 part 'weather_model.g.dart';
 
 @freezed
@@ -19,13 +18,14 @@ class WeatherModel with _$WeatherModel {
     required String timezone,
     required String timezoneAbbreviation,
     required num elevation,
-    required CurrentUnitModel currentUnits,
-    required CurrentModel current,
-    required DailyUnitModel dailyUnits,
-    required DailyModel daily,
+    required CurrentUnitModel currentUnitModel,
+    required CurrentModel currentModel,
+    required DailyUnitModel dailyUnitModel,
+    required DailyModel dailyModel,
   }) = _WeatherModel;
 
-  factory WeatherModel.fromJson(Map<String, Object?> json) => _$WeatherModelFromJson(json);
+  factory WeatherModel.fromJson(Map<String, Object?> json) =>
+      _$WeatherModelFromJson(json);
 }
 
 // dart run build_runner build --delete-conflicting-outputs

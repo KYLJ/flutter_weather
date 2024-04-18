@@ -15,12 +15,14 @@ _$WeatherModelImpl _$$WeatherModelImplFromJson(Map<String, dynamic> json) =>
       timezone: json['timezone'] as String,
       timezoneAbbreviation: json['timezoneAbbreviation'] as String,
       elevation: json['elevation'] as num,
-      currentUnits: CurrentUnitModel.fromJson(
-          json['currentUnits'] as Map<String, dynamic>),
-      current: CurrentModel.fromJson(json['current'] as Map<String, dynamic>),
-      dailyUnits:
-          DailyUnitModel.fromJson(json['dailyUnits'] as Map<String, dynamic>),
-      daily: DailyModel.fromJson(json['daily'] as Map<String, dynamic>),
+      currentUnitModel: CurrentUnitModel.fromJson(
+          json['currentUnitModel'] as Map<String, dynamic>),
+      currentModel:
+          CurrentModel.fromJson(json['currentModel'] as Map<String, dynamic>),
+      dailyUnitModel: DailyUnitModel.fromJson(
+          json['dailyUnitModel'] as Map<String, dynamic>),
+      dailyModel:
+          DailyModel.fromJson(json['dailyModel'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$WeatherModelImplToJson(_$WeatherModelImpl instance) =>
@@ -32,8 +34,8 @@ Map<String, dynamic> _$$WeatherModelImplToJson(_$WeatherModelImpl instance) =>
       'timezone': instance.timezone,
       'timezoneAbbreviation': instance.timezoneAbbreviation,
       'elevation': instance.elevation,
-      'currentUnits': instance.currentUnits,
-      'current': instance.current,
-      'dailyUnits': instance.dailyUnits,
-      'daily': instance.daily,
+      'currentUnitModel': instance.currentUnitModel,
+      'currentModel': instance.currentModel,
+      'dailyUnitModel': instance.dailyUnitModel,
+      'dailyModel': instance.dailyModel,
     };
